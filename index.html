@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>openaltimeter | home</title>
+	<meta name="copyright" content="Copyright (c) 2010 Jony Hudson" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name="Keywords" content="openaltimeter open altimeter logging DLG low voltage alarm" />
+	<meta name="Description" content="openaltimeter is an open-source altimeter for RC aircraft." />
+	<meta name="author" content="Jony Hudson" />
+	<meta name="Robots" content="index,follow" />
+	<link rel="stylesheet" href="openaltimeter.css" type="text/css" />
+	<link rel="stylesheet" href="css/slimbox2.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/slimbox2.js"></script>
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-141366-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+<body>
+
+	<div id="wrap">
+		<div id="banner"><img src="images/logo.gif" align=RIGHT alt="openaltimeter logo"></div>
+	<div id="sidebar">
+		<ul>
+			<li><a href="index.html">Overview</a></li>
+			<li><a href="installation.html">Installation</a></li>
+			<li><a href="instructions.html">Instructions</a></li>
+			<li><a href="hardware.html">Hardware</a></li>
+			<li><a href="firmware.html">Firmware</a></li>
+			<li><a href="downloads.html">Downloads</a></li>
+			<li><a href="comparison.html">Comparison</a></li>
+			<li><a href="buy.html">Buy</a></li>
+			<li><a href="about.html">About</a></li>
+		</ul>
+	</div>
+
+	<div id="main">
+	
+<h1>Overview</h1>
+
+<p>The openaltimeter is a small, lightweight, low-power logging altimeter with an optional built-in LiPo regulator and a very loud beeper! It's aimed at radio-controlled glider pilots, particularly DLG fliers, but because the firmware is open-source it can be customised completely for other applications.</p>
+<p><center><img src="images/board_top_400.jpg"/></center></p>
+
+<h2>DLG features</h2>
+
+<p>The openaltimeter was designed as a low-cost "do everything" piece of electronics for discus-launched gliders (DLG). Feature highlights:</p>
+<ul>
+<li>Logging altimeter with better than 0.5m height resolution and 4Mbits of onboard memory. Log a full weekend's flying without needing to clear the memory.</li>
+<li>At-the-field launch-height readout. Optimise your launches with real-time feedback.</li>
+<li>Fully configurable low-voltage alarm with 90dB sounder. Because the firmware is completely customisable new battery types can be added in the future.</li>
+<li>Optional on-board LiPo regulation using a high-efficiency Recom 1A switching regulator. Low-voltage alarm works both with and without regulator. The board can also be fitted with an old-fashioned linear regulator chip (untested).</li>
+<li>Assembled board, without regulator or leads, is 31mm x 16mm and weighs 3.1g. Current consumption averages 4.5mA when sounder is quiet.</li>
+</ul>
+<p>For a quick tour of the features and to see the openaltimeter in use, check out the following short video, available in glorious HD!</p>
+<p><center><iframe title="YouTube video player" class="youtube-player" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/NRUAM9y1xtE?rel=0&amp;hd=1" frameborder="0"></iframe></center></p>
+
+<h2>Open-source firmware</h2>
+<p>The thing that really makes the openaltimeter different though is that the <a href="firmware.html">firmware code</a> is freely available under an <a href="http://www.gnu.org/licenses/gpl.html">open-source licence</a>. The board has been designed to be compatible with the easy-to-use, free <a href="http://www.arduino.cc/">Arduino</a> programming system, which means even absolute beginners can be hacking their own custom builds of the firmware within minutes. No specialist programmers or expensive software licences needed: the same connecting cable that's used to download the data from the logger is used to re-program the board.</p>
+
+<p>Don't like the way it beeps at you? Want a custom startup tune? Want it to play "The Flight of the Valkyries" when you throw a switch on your transmitter? Want to log the battery voltage a hundred times per second to detect voltage glitches? Want to turn it in to a height-limiting switch for eSoaring? Want to interface it to other sensors that have a serial output (e.g. GPS) and log those? Want to connect it to your Jeti telemetry system? All possible with a bit of coding! You might say the sky's the limit (groan). If you're interested in hacking the firmware then you should check out the <a href="hardware.html">hardware</a> page to get an idea of what's possible. The <a href="firmware.html">firmware</a> page describes how the firmware is built, and has instructions on how to start hacking.
+</p>
+
+
+	</div>
+
+	<div id="footer">
+		<p>&copy; 2010-2013 <a href="http://j-star.org/">Jony Hudson.</a></p>
+	</div>
+
+</div>
+</body>
+</html>
+

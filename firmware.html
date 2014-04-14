@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>openaltimeter | firmware</title>
+	<meta name="copyright" content="Copyright (c) 2010 Jony Hudson" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name="Keywords" content="openaltimeter open altimeter logging DLG low voltage alarm" />
+	<meta name="Description" content="openaltimeter is an open-source altimeter for RC aircraft." />
+	<meta name="author" content="Jony Hudson" />
+	<meta name="Robots" content="index,follow" />
+	<link rel="stylesheet" href="openaltimeter.css" type="text/css" />
+	<link rel="stylesheet" href="css/slimbox2.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/slimbox2.js"></script>
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-141366-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+<body>
+
+	<div id="wrap">
+		<div id="banner"><img src="images/logo.gif" align=RIGHT alt="openaltimeter logo"></div>
+	<div id="sidebar">
+		<ul>
+			<li><a href="index.html">Overview</a></li>
+			<li><a href="installation.html">Installation</a></li>
+			<li><a href="instructions.html">Instructions</a></li>
+			<li><a href="hardware.html">Hardware</a></li>
+			<li><a href="firmware.html">Firmware</a></li>
+			<li><a href="downloads.html">Downloads</a></li>
+			<li><a href="comparison.html">Comparison</a></li>
+			<li><a href="buy.html">Buy</a></li>
+			<li><a href="about.html">About</a></li>
+		</ul>
+	</div>
+
+	<div id="main">
+	
+<h1>Firmware</h1>
+
+<p>Rebuilding the firmware for the openaltimeter is really easy. On this page you'll learn how to set up the Arduino development environment and how to hack the firmware code. If you don't believe me when I say it's easy then check out the following video where I customise the firmware in minutes.</p>
+<p><center><iframe title="YouTube video player" class="youtube-player" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/s6FprUvNvzc?rel=0&amp;hd=1" frameborder="0"></iframe></center></p>
+
+<h2>Getting set up</h2>
+
+<p>You need to do two things before you can start hacking the firmware: connect to the openaltimeter with the serial dongle, and install/setup the arduino enviroment.</p>
+
+<p>Follow the procedure on the <a href="instructions.html">instructions</a> page to connect the serial dongle. The same dongle is used for both downloading the data and updating the firmware.</p>
+
+<p>You can download the Arduino environment from <a href="http://arduino.cc/en/Main/Software">here</a>. Currently the OA firmware needs an old version of the Arduino software to build - version 22 is best. Grab that and unzip it somewhere convenient. Make sure that the openaltimeter is connected to the serial dongle and powered before you start the Arduino environment. There are a couple of settings that you'll need to get right in the Arduino software in order to work with the openaltimeter. First, you'll need to set the board type. Do this under the "Tools:Board" menu. Openaltimeter has been designed to be compatible with the "Arduino Pro or Pro Mini (3.3V, 8MHz) w/ ATmega328" setting. Second, you need to select the correct serial port in the "Tools:Serial Port" menu. Choose the port number that corresponds to your serial dongle (this should appear when you first plug the dongle in). If you don't know the number it does no harm to try all the alternatives and see which one works.</p>
+
+<h2>Getting the latest code</h2>
+
+<p>The firmware source code can be downloaded from the <a href="downloads.html">download</a> page. Unless you have a good reason not to, you should grab the latest version of the firmware code. Unzip the code somewhere convenient and open the file "Firmware.pde" from within the Arduino enviroment.</p>
+
+<p>If you want to work on the bleeding-edge then the source code can also be obtained direct from the Mercurial repository at <a href="https://bitbucket.org/JonyEpsilon/openaltimeter-firmware">https://bitbucket.org/JonyEpsilon/openaltimeter-firmware</a>. Note though, that the latest version in the repository is often a work-in-progress and may not always work as expected. The source code for the downloader is also available at <a href="https://bitbucket.org/JonyEpsilon/openaltimeter-downloader">https://bitbucket.org/JonyEpsilon/openaltimeter-downloader</a>.</p>
+
+<p>Anyone can clone the source code repositories, and make their own customised fork. These repositories can be found at <a href="https://bitbucket.org/JonyEpsilon/openaltimeter-downloader/descendants">https://bitbucket.org/JonyEpsilon/openaltimeter-downloader/descendants</a> and <a href="https://bitbucket.org/JonyEpsilon/openaltimeter-firmware/descendants">https://bitbucket.org/JonyEpsilon/openaltimeter-firmware/descendants</a>. A number of people have reported that the SmallJoeMan fork of the donwloader has some useful enhancements for power users.</p>
+
+<h2>Building and flashing the firmware</h2>
+
+<p>Now that you've done the hard work the rest is easy. Just press the "Upload" button in the Arduino environment. After a short delay while Arduino compiles the code it should print out a message and then the lights on the serial dongle should start flashing. When these lights stop flashing the firmware upload is complete. You can now click the "Serial Monitor" button to communicate with the board and make sure everything went well.</p>
+
+<h2>Configuring the firmware</h2>
+
+<p>After re-flashing the firmware you should always connect with the downloader app and run "Altimeter->Settings" to update the settings. You can leave most of them alone for now, but you should check the battery settings to make sure that you've selected the right battery chemistry. Without this, the low-voltage alarm will not work properly.</p>
+
+<h2>Tutorial</h2>
+
+<p>For a step-by-step walkthrough of implementing a new feature, check out the great post by Joe Smallman <a href="http://www.rcgroups.com/forums/showpost.php?p=18340990&postcount=596">here</a>.</p>
+
+
+<h2>Filing bugs, requesting features</h2>
+
+<p>If you find a bug in the firmware, or would like to see a feature added, then please file an issue <a href="https://bitbucket.org/JonyEpsilon/openaltimeter-firmware/issues">here</a>.</p>
+
+
+	</div>
+
+	<div id="footer">
+		<p>&copy; 2010-2013 <a href="http://j-star.org/">Jony Hudson.</a></p>
+	</div>
+
+</div>
+</body>
+</html>
+

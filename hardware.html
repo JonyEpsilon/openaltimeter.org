@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>openaltimeter | hardware</title>
+	<meta name="copyright" content="Copyright (c) 2010 Jony Hudson" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name="Keywords" content="openaltimeter open altimeter logging DLG low voltage alarm" />
+	<meta name="Description" content="openaltimeter is an open-source altimeter for RC aircraft." />
+	<meta name="author" content="Jony Hudson" />
+	<meta name="Robots" content="index,follow" />
+	<link rel="stylesheet" href="openaltimeter.css" type="text/css" />
+	<link rel="stylesheet" href="css/slimbox2.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/slimbox2.js"></script>
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-141366-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+<body>
+
+	<div id="wrap">
+		<div id="banner"><img src="images/logo.gif" align=RIGHT alt="openaltimeter logo"></div>
+	<div id="sidebar">
+		<ul>
+			<li><a href="index.html">Overview</a></li>
+			<li><a href="installation.html">Installation</a></li>
+			<li><a href="instructions.html">Instructions</a></li>
+			<li><a href="hardware.html">Hardware</a></li>
+			<li><a href="firmware.html">Firmware</a></li>
+			<li><a href="downloads.html">Downloads</a></li>
+			<li><a href="comparison.html">Comparison</a></li>
+			<li><a href="buy.html">Buy</a></li>
+			<li><a href="about.html">About</a></li>
+		</ul>
+	</div>
+
+	<div id="main">
+	
+<h1>Hardware</h1>
+
+<p>On this page you'll find details of the openaltimeter hardware. This might be of interest if you want to connect your board in a novel way, troubleshoot your board, if you are planning to write your own custom firmware, or if you are planning to make your own boards..
+</p>
+
+<h2>Video tour</h2>
+
+<p>The following video gives a short overview of the hardware and its capabilities. Be sure to hit full-screen to watch in glorious HD!</p>
+
+<p><center><iframe title="YouTube video player" class="youtube-player" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/AzUfgIw99ww?rel=0&amp;hd=1" frameborder="0"></iframe></center></p>
+
+<h2>Connections</h2>
+<p>The openaltimeter has connections for power input and output, connection points for a voltage regulator, two bi-directional servo channels, and a serial port.
+<p><center><img src="images/board_connections.png"/><div id="caption"><a href="pdf/board_connections.pdf">Printable pdf version</a></div></center></p>
+<p>The connections to the board are shown above. If you're looking for information on how to connect the openaltimeter to your aircraft in one of its typical configurations then you might want to look at the <a href="installation.html">installation</a> page first.</p>
+
+<h2>Programmer's reference</h2>
+<p>If you're planning on writing custom firmware for the board then you'll need to know what's connected to what. You can get this information from the full schematics, below, but they can be a bit overwhelming. The following diagram presents the key information, hopefully, in a more digestable form.</p>
+<p><center><img src="images/hardware_reference.png"/><div id="caption"><a href="pdf/hardware_reference.pdf">Printable pdf version</a></div></center></p>
+<p>The critical information, as far as writing firmware goes, is the green text which lists the names the connections are given by the Arduino software.</p>
+
+<h2>Schematic and production information</h2>
+<p>You can download the schematic <a href="pdf/schematic.pdf">here</a> in pdf format, which is useful if you just want to study it. If you want to work with the circuit, and design your own version then the <a href="http://cadsoft.de">Eagle CAD</a> version <a href="files/altimeter.sch">here</a> may be more useful. You can also download the Eagle version of the <a href="files/altimeter_v2_final.brd">PCB design</a>. The schematic and PCB design are released under the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. That mumbo-jumbo means that you can make your own circuits, either identical copies, or modified versions for non-commercial purposes. Further, if you release the designs for those versions to the public then you need to acknowledge the original, and make your work available under the same terms. This licence does not allow you to make boards to sell, but please see below for how to get a (free) exception for this.</p>
+<p>You can also download component placement diagrams for the production boards which can help when troubleshooting. There are diagrams for the <a href="pdf/openaltimeter_v2_top_placement.pdf">top</a> and <a href="pdf/openaltimeter_v2_bottom_placement_MIRRORED.pdf">bottom</a>.</p>
+<p>If you are planning on getting a batch of your own boards assembled then you might find this zipfile of <a href="files/production.zip">production information</a> useful. It has the Gerber files that the PCB house will need to produce the boards, a bill-of-materials that the assembly house will need to buy your components and populate the boards, and placement diagrams and photographs to make it more likely that you get back working boards! There is also some useful information on production programming in there. These files were the exact data used for the last run of boards, so can be considered bug-free and battle tested :-) Note though, that the programming files may not contain the latest firmware version, as updates have been issued since the last batch of boards was made. As above, this information is licensed to you under the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. If you wish to make a batch of boards to sell (i.e. commercial usage) then please get in touch and I will grant an individual exception. I am very happy for people to make boards to sell, and will grant such exceptions freely, but I would like to keep track of who is making boards commercially.</p>
+
+
+
+
+	</div>
+
+	<div id="footer">
+		<p>&copy; 2010-2013 <a href="http://j-star.org/">Jony Hudson.</a></p>
+	</div>
+
+</div>
+</body>
+</html>
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>openaltimeter | installation</title>
+	<meta name="copyright" content="Copyright (c) 2010 Jony Hudson" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name="Keywords" content="openaltimeter open altimeter logging DLG low voltage alarm" />
+	<meta name="Description" content="openaltimeter is an open-source altimeter for RC aircraft." />
+	<meta name="author" content="Jony Hudson" />
+	<meta name="Robots" content="index,follow" />
+	<link rel="stylesheet" href="openaltimeter.css" type="text/css" />
+	<link rel="stylesheet" href="css/slimbox2.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/slimbox2.js"></script>
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-141366-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+<body>
+
+	<div id="wrap">
+		<div id="banner"><img src="images/logo.gif" align=RIGHT alt="openaltimeter logo"></div>
+	<div id="sidebar">
+		<ul>
+			<li><a href="index.html">Overview</a></li>
+			<li><a href="installation.html">Installation</a></li>
+			<li><a href="instructions.html">Instructions</a></li>
+			<li><a href="hardware.html">Hardware</a></li>
+			<li><a href="firmware.html">Firmware</a></li>
+			<li><a href="downloads.html">Downloads</a></li>
+			<li><a href="comparison.html">Comparison</a></li>
+			<li><a href="buy.html">Buy</a></li>
+			<li><a href="about.html">About</a></li>
+		</ul>
+	</div>
+
+	<div id="main">
+	
+<h1>Installation</h1>
+
+<p>This pages tells you everything you need to know to install the openaltimeter in your models. In general there are three steps that need to be carried out: 1) connect the appropriate leads to the board; 2) configure the board firmware to match the battery that you're using; 3) install in the model. There are two standard configurations that you can use the board in and these are dealt with separately below.</p>
+
+<h2>Board connections</h2>
+<p>The following image shows what the various connection pads on the board are for. Don't worry if they don't all make sense at the moment - it's not really necessary to worry about all the details to get the thing working.</p>
+<p><center><img src="images/board_connections.png"/><div id="caption"><a href="pdf/board_connections.pdf">Printable pdf version</a></div></center></p>
+<p>One thing to watch out for when connecting is that the board is not reverse-polarity protected. Be absolutely sure that you're connecting the positive and negative terminals the right way around. Failure to observe this will result in the magic smoke being released from the unit!</p>
+
+<p>They say a picture speaks a thousand words, so this video must be worth a million!</p>
+<p><center><iframe title="YouTube video player" class="youtube-player" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/R0Egb87NxAg?rel=0&amp;hd=1" frameborder="0"></iframe></center></p>
+
+
+<h2>Installation with NiMH/external regulator</h2>
+<p>If you're using a receiver pack that doesn't need voltage regulation, like a NiMH pack, or you're using a separate voltage regulator then you don't need to use the openaltimeter's regulator function. The low-voltage alarm will still work with unregulated packs, but obviously it can't help you if you have a separate regulator (because it only measures the regulated voltage). To use the board without regulator function you should connect it as shown below.</p>
+<p><center><img src="images/unregulated_connections.png"/><div id="caption"><a href="pdf/unregulated_connections.pdf">Printable pdf version</a></div></center></p>
+<p>The board takes its power from the radio in this case. Notice that you need to add a wire link that goes where the regulator would otherwise go. Be sure to use insulated wire for this link, as if this shorts out to ground, it's game over! You should also be very careful that none of the servo lead wires can short to the regulator connection pads. I use a small ring of heatshrink around the board to isolate the regulator pads, installed after the wire link but before the servo lead is connected.</p>
+
+<h2>Installation with built-in regulator</h2>
+<p>The other connection option is to use the openaltimeter board as a voltage regulator. This is most useful when used with LiPo battery packs. In this case you need to make three sets of connections, as shown below.</p>
+<p><center><img src="images/regulated_connections.png"/><div id="caption"><a href="pdf/regulated_connections.pdf">Printable pdf version</a></div></center></p>
+<p>First, you'll want to connect the regulator itself. I always then apply a thin ring of heatshrink to completely isolate the regulator terminals (see the video for details). After this you need to connect a servo lead, which takes the power to the radio system, and a lead to connect the system to the battery. Even more so than above, you should be very careful about avoiding short-circuits. LiPo packs can quite quickly start things smoking if you're not careful! I always check for shorts with a multimeter before connecting anything to the juice.</p>
+
+<h2>Setting up the altimeter</h2>
+
+<p> Once you've made the connections to the altimeter you can configure it for use. This is done with the "downloader" app which you can get from the <a href="downloads.html">downloads</a> page. You should connect up the altimeter to the serial port dongle, following the instructions on the <a href="instructions.html">instructions</a> page. Once you're plugged in, then open the downloader app, and update the firmware to the latest version. You do this by selecting the serial port that corresponds to the dongle (again, details on the <a href="instructions.html">instructions</a> page) and running the "Flash firmware ..." function in the downloader's "Altimeter" menu. This will make sure the altimeter has the latest, greatest firmware on it, and will bring up a settings box where you can set up the logging rate, low voltage alarm, switch configuration etc.</p>
+
+<h2>Installing in the model</h2>
+
+<p>To take advantage of the at-the-field height readout, and the lost-model-alarm functions you need to connect the openaltimeter to a spare channel on your receiver. This channel should be controlled by a three-position switch on your transmitter. How you install it in your model is up to you, but here are a few photos that might provide inspiration.</p>
+<p><center>
+<a href="images/blaster_600.jpg" rel="lightbox-install" title="Installed in a Blaster 2, with Hyperion 3s 240mAh LiPo"><img src="images/blaster_250.jpg"/></a>&nbsp
+<a href="images/tabooish_600.jpg" rel="lightbox-install" title="Installed in a home-built Tabooish, with Hyperion 3s 240mAh LiPo"><img src="images/tabooish_250.jpg"/></a>
+<div id="caption">Click to enlarge</div>
+</center></p>
+
+
+	</div>
+
+	<div id="footer">
+		<p>&copy; 2010-2013 <a href="http://j-star.org/">Jony Hudson.</a></p>
+	</div>
+
+</div>
+</body>
+</html>
+

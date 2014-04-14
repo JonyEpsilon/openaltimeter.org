@@ -1,0 +1,147 @@
+	body, html {
+		margin:0;
+		padding:0;
+		background:#ffffff;
+		font-family: Georgia, Times, serif;
+		color:#555;
+	}
+	body {
+		min-width:50em;
+		margin-top:1.5em;
+	}
+	#wrap {
+		margin:0 auto;
+		width:70%;
+	}
+   #wrap #banner {
+		height: 42px;
+		padding-bottom: 0em;
+		border-bottom-style: solid;
+		border-bottom-color: #007FFF;
+		border-bottom-width: 1px;
+	}
+	#wrap #banner img {
+//		margin: 0.1em;
+	}
+	#main {
+		float:right;
+		width:80%;
+		margin-top: 0.7em;
+	}
+	#main h1, #main h2 {
+ 		padding:2% 0 0 3%;
+		font-family: Verdana, sans-serif;
+    }
+	#main h1 {
+		font-size: 130%;
+		color: #01A611;
+	}
+	#main h2 {
+		font-size: 105%;
+		padding:0 0 0 3.5%;
+		color: #007FFF;
+	}
+	#main h3 {
+		font: 80% Verdana, sans-serif;
+		padding:0 0 0 4%;
+		text-transform: uppercase;
+		color: #007FFF;
+	}
+	#main h4 {
+		font-size: 80%;
+		padding:0 0 0 4%;
+		color: #007FFF;
+	}
+	#main h5 {
+		font-size: 70%;
+		padding:0 0 0 4%;
+		color: #007FFF;
+	}
+	#main p, #main table {
+		padding:0 1.7em;
+        text-align: justify;
+    }
+	#main ul {
+		padding-right: 3em;
+		text-align: justify;
+	}
+	#main li {
+		padding:0em 0em 0.4em 0em;
+	}
+	#main a:link
+	{
+		color: #007FFF;
+	}
+	#main a:visited
+	{
+		color: #2e5574;
+	}
+	#sidebar {
+		float:left;
+		width:20%;
+		color: #01A611;
+		margin-top: 1.9em;
+	}
+	#sidebar ul {
+		margin-bottom:0;
+        padding-left: 1.8em;
+		list-style: circle;
+		font-size: 110%;
+		font-family: Verdana, sans-serif
+    }
+    #sidebar h3, #sidebar p {
+		font-size: 120%;
+		padding:0 1em 0 0;
+    }
+	#sidebar a
+	{
+		text-decoration: none;
+		font-size: 90%;
+		color: #007FFF;
+	}
+	#footer {
+		clear:both
+	}
+	#footer p {
+		font: 50% Verdana, sans-serif;
+		padding:5em 0.5em 0.5em 0.5em;
+		margin:0;
+        float: right
+    }
+
+	#caption {
+		font: 80% Verdana, sans-serif;
+	}
+
+	table.comparison {
+		border-width: 1px;
+		border-spacing: 4px;
+		border-style: none;
+		border-color: gray;
+		border-collapse: separate;
+		background-color: white;
+	}
+
+	table.comparison td {
+		border-width: 1px;
+		padding: 0.2em;
+		border-style: solid;
+		border-color: gray;
+		text-align: center;
+		background-color: #E5F3FF;
+	}
+
+	table.comparison td.corner {
+		background-color: white;
+		border-style: none;
+	}
+
+	table.comparison td.title {
+		background-color: #CCE6FF;
+	}
+
+	table.comparison td.best {
+		background-color:  #B3FF99;
+	}
+
+
